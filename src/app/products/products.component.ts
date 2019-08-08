@@ -14,8 +14,8 @@ export class ProductsComponent implements OnInit {
   ngOnInit() {
   }
 
-  fetch() {
-    this.http.get(`https://api.mercadolibre.com/sites/MCO/search?q=ipod#json`)
+  fetchProduct(item) {
+    this.http.get(`https://api.mercadolibre.com/sites/MCO/search?q=${item}#json`)
     .subscribe(
       result => {
         this.products = result;
@@ -25,6 +25,6 @@ export class ProductsComponent implements OnInit {
         console.log("Error");
       }
     )
-}
+  }
 
 }

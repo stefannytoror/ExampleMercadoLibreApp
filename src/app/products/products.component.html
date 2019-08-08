@@ -1,6 +1,15 @@
-<p>products works!</p>
-<p *ngIf= "products">
-    {{ products.results[1].title }}
-  </p>
-  <input type="text" #ciudad>
-  <button (click)= "fetch()"></button>
+<div>
+  <p>Products</p>
+  <input type="text" #item>
+  <button (click)= "fetchProduct(item.value)">Search</button>
+</div>
+
+ <div *ngIf= "products">
+   <mat-grid-list cols="4" gutterSize="10px">
+      <mat-grid-tile *ngFor="let product of products.results">
+          <img src= {{product.thumbnail}} alt="Picture it's not available"/>
+          <p>{{ product.title }}</p>
+          <p>${{ product.price }}</p>
+      </mat-grid-tile>
+   </mat-grid-list>
+</div>
