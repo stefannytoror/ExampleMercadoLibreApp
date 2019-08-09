@@ -5,11 +5,13 @@
 </div>
 
  <div *ngIf= "products">
-   <mat-grid-list cols="4" gutterSize="10px">
-      <mat-grid-tile *ngFor="let product of products.results">
-          <img src= {{product.thumbnail}} alt="Picture it's not available"/>
-          <p>{{ product.title }}</p>
-          <p>${{ product.price }}</p>
+   <mat-grid-list cols="3" rowHeight="2:1" >
+      <mat-grid-tile *ngFor="let product of products.results" class="product-container" >
+         <ul style="list-style-type:none">
+            <li>{{product.title}}</li>
+            <li><img [src]="product.thumbnail"></li>
+            <li> Price: ${{product.price}}$</li>
+         </ul>
       </mat-grid-tile>
    </mat-grid-list>
 </div>
