@@ -1,17 +1,18 @@
-<div>
-  <p>Products</p>
+<div class="container">
   <input type="text" #item>
-  <button (click)= "fetchProduct(item.value)">Search</button>
+  <button class="btn btn-primary" (click)= "fetchProduct(item.value)">Search</button>
 </div>
-
- <div *ngIf= "products">
-   <mat-grid-list cols="3" rowHeight="2:1" >
-      <mat-grid-tile *ngFor="let product of products.results" class="product-container" >
-         <ul style="list-style-type:none">
-            <li>{{product.title}}</li>
-            <li><img [src]="product.thumbnail"></li>
-            <li> Price: ${{product.price}}$</li>
-         </ul>
-      </mat-grid-tile>
-   </mat-grid-list>
-</div>
+<mat-grid-list cols="3" rowHeight="300px" *ngIf= "products">
+   <mat-grid-tile 
+   *ngFor="let product of products.results" class="product-container">
+   <section class="card border-success mb-3" style="max-width: 20rem;">
+      <div class="card-header">{{product.title}}</div>
+      <div class="card-body">
+         <img [src]="product.thumbnail">
+         <h4 class="card-title">Price: ${{product.price}}</h4>
+         <p class="card-text"></p>
+      </div>
+   </section>
+   </mat-grid-tile>
+</mat-grid-list>
+ 

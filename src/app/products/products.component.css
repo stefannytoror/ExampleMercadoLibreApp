@@ -1,8 +1,9 @@
-ul {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-}
-li {
+div {
   text-align: center;
+}
+.container {
+  vertical-align: middle;
+  max-width: 1300px;
+  text-align: center;
+  align-content: center
 }
