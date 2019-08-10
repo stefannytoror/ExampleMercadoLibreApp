@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductsComponent implements OnInit {
   private products = null;
+  private seller = null
 
   constructor(private http:HttpClient) { }
 
@@ -20,6 +21,18 @@ export class ProductsComponent implements OnInit {
       result => {
         this.products = result;
         console.log(this.products)
+      },
+      error => {
+        console.log("Error");
+      }
+    )
+  }
+
+  fetchSeller(id) {
+    this.http.get(`https://api.mercadolibre.com/users/${id}`)
+    .subscribe(
+      result => {
+        return result
       },
       error => {
         console.log("Error");

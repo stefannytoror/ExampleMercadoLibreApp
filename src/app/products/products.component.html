@@ -9,8 +9,8 @@
       <div class="card-header">{{product.title}}</div>
       <div class="card-body">
          <img [src]="product.thumbnail">
-         <h4 class="card-title">Price: ${{product.price}}</h4>
-         <p class="card-text"></p>
+         <h4 class="card-title">$ {{product.price}}</h4>
+         <p class="card-text"> Seller id :{{product.seller.id}}</p>
       </div>
    </section>
    </mat-grid-tile>
